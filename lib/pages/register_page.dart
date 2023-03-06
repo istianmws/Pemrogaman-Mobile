@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:praktpm1/komponen/my_button.dart';
 import 'package:praktpm1/komponen/my_textfield.dart';
 import '../komponen/square_tile.dart';
+import '../services/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
@@ -66,7 +67,7 @@ class _RegisterPageState extends State<RegisterPage> {
     }
 
     //loading hide
-    Navigator.pop(context);
+    // Navigator.pop(context);
   }
 
 
@@ -161,14 +162,20 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     // google button
-                    SquareTile(imagePath: 'lib/images/google.png'),
+                    SquareTile(
+                      onTap: () => AuthService().signInWithGoogle(),
+                      imagePath: 'lib/images/google.png',
+                    ),
 
                     SizedBox(width: 25),
 
                     // apple button
-                    SquareTile(imagePath: 'lib/images/apple.png')
+                    SquareTile(
+                      onTap: (){},
+                      imagePath: 'lib/images/apple.png',
+                    )
                   ],
                 ),
 
