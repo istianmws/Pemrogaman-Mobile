@@ -1,21 +1,21 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:praktpm1/komponen/my_button.dart';
 import 'package:praktpm1/komponen/my_textfield.dart';
 import '../komponen/square_tile.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final Function()? onTap;
-  LoginPage({Key? key, this.onTap}) : super(key: key);
+  RegisterPage({Key? key, this.onTap}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   //text edit controller
   final unameController = TextEditingController();
-
+  final cpassController = TextEditingController();
   final upassController = TextEditingController();
 
   //error
@@ -35,24 +35,28 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  //sign user in
-  void signUserIn() async{
+  //signup user
+  void signUserUp() async{
 
     //loading screen
     showDialog(
       context: context, builder: (context){
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    },
     );
 
     //sign in
     try{
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: unameController.text,
-          password: upassController.text
-      );
+      if (upassController.text == cpassController.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: unameController.text,
+            password: upassController.text
+        );
+      }else{
+        showErrorMessage("konfirmasi password salah!");
+      }
     }on FirebaseAuthException catch (e){
       Navigator.pop(context);
       //Email/Password salah
@@ -86,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height:50),
                 //welcome
                 Text(
-                  'Selamat Datang, Silahkan Login!',
+                  'Selamat Datang, Silahkan Buat Akun Dulu',
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 16,
@@ -110,6 +114,14 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 const SizedBox(height:10),
+                // confirm pass
+                MyTextField(
+                  controller: cpassController,
+                  hintText: 'Confirm Password',
+                  obsecureText: true,
+                ),
+
+                const SizedBox(height:10),
                 //forgot pass
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -127,8 +139,8 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height:25),
                 //sign in
                 MyButton(
-                  text: "Sign In",
-                  onTap: signUserIn,
+                  text: "Sign Up",
+                  onTap: signUserUp,
                 ),
 
                 const SizedBox(height:50),
@@ -182,14 +194,14 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member?',
+                      'Already have an Account?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        'Register now',
+                        'Just Login',
                         style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
