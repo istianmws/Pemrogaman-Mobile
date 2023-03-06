@@ -30,7 +30,7 @@ class DataPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: Text(
-                    '1. Rakha',
+                    '1. Rakha Mohammad Aryaputra - 123190109',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: 50,
@@ -45,7 +45,7 @@ class DataPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: Text(
-                    '2. Istian',
+                    '2. Istian Muhammad Wahyu Setiawan - 123190107',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: 50,
@@ -60,7 +60,7 @@ class DataPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 35),
                   child: Text(
-                    '3. Dani',
+                    '3. Muhammad Patty Amal Madani - 123190121',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                         fontSize: 50,
