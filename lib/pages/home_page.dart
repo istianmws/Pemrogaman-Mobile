@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'calculator.dart';
+import 'biodata.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -22,8 +24,28 @@ class HomePage extends StatelessWidget {
       ]),
 
       body: Center(
-        child: Text("Halo ${user.email!}"),
-      ),
+          child: Column(
+        children: [
+          Padding(padding: EdgeInsets.symmetric(horizontal: 35),
+            child: ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const DataPage())
+              );
+            }, child: Text("Data Kelompok"),
+            ),
+          ),
+          Padding(padding: EdgeInsets.symmetric(horizontal: 35),
+            child: ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const CalculatorPage())
+              );
+            }, child: Text("Calculator"),
+            ),
+          )
+
+        ],
+      ))
+
     );
   }
 }
