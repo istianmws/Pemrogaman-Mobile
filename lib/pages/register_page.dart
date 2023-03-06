@@ -121,21 +121,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   obsecureText: true,
                 ),
 
-                const SizedBox(height:10),
-                //forgot pass
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Lupa Password?',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ],
-                  ),
-                ),
-
                 const SizedBox(height:25),
                 //sign in
                 MyButton(

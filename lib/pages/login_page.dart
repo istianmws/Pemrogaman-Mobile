@@ -25,11 +25,8 @@ class _LoginPageState extends State<LoginPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Center(
-            child: Text(
-              message,
-            ),
-          ),
+          title: Text("Error"),
+          content: Text(message),
         );
       },
     );
