@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:praktpm1/pages/biodata_page.dart';
+import 'package:praktpm1/pages/situs_page.dart';
+import 'package:praktpm1/pages/stopwatch_page.dart';
 import 'pages/auth_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -17,9 +20,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      routes: {
+        '/anggota': (context) => BiodataPage(),
+        '/stopwatch': (context) => StopwatchPage(),
+        '/situs': (context) => SitusPage(),
+        '/favorite': (context) => StopwatchPage(),
+      },
       debugShowCheckedModeBanner: false,
       home: AuthPage(),
+
     );
   }
 }
