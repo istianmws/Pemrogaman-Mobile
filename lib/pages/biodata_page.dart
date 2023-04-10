@@ -149,7 +149,7 @@ class _BiodataPageState extends State<BiodataPage> {
                         width: 100,
                         decoration: BoxDecoration(
                             image: const DecorationImage(
-                                image: AssetImage('istian.png'),
+                                image: AssetImage("raka.jpg"),
                                 fit: BoxFit.fitWidth
                             ),
                             borderRadius: BorderRadius.circular(20),

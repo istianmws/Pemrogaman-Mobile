@@ -166,7 +166,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     // google button
                     SquareTile(
                       onTap: () => AuthService().signInWithGoogle(),
-                      imagePath: 'lib/images/google.png',
+                      imagePath: 'google.png',
                     ),
 
                     SizedBox(width: 25),
@@ -174,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     // apple button
                     SquareTile(
                       onTap: (){},
-                      imagePath: 'lib/images/apple.png',
+                      imagePath: 'apple.png',
                     )
                   ],
                 ),

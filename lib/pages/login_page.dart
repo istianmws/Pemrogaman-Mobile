@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                     // google button
                     SquareTile(
                       onTap: () => AuthService().signInWithGoogle(),
-                      imagePath: 'lib/images/google.png',
+                      imagePath: 'google.png',
                     ),
 
                     SizedBox(width: 25),
@@ -174,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                     // apple button
                     SquareTile(
                       onTap: (){},
-                      imagePath: 'lib/images/apple.png',
+                      imagePath: 'apple.png',
                     )
                   ],
                 ),

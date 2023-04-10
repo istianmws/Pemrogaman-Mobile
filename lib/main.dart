@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktpm1/pages/biodata_page.dart';
+import 'package:praktpm1/pages/favorit_page.dart';
 import 'package:praktpm1/pages/situs_page.dart';
 import 'package:praktpm1/pages/stopwatch_page.dart';
 import 'pages/auth_page.dart';
@@ -17,6 +18,7 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         '/anggota': (context) => BiodataPage(),
         '/stopwatch': (context) => StopwatchPage(),
         '/situs': (context) => SitusPage(),
-        '/favorite': (context) => StopwatchPage(),
+        '/favorite': (context) => FavoriteSitesPage(favoriteSites: [],),
       },
       debugShowCheckedModeBanner: false,
       home: AuthPage(),
